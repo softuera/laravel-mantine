@@ -13,7 +13,7 @@ export default function Login() {
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('panel.login'));
+        post(route('panel.login.store'));
     };
 
     return (

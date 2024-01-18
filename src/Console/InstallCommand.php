@@ -50,9 +50,9 @@ class InstallCommand extends Command implements PromptsForMissingInput
             return [
                 "@inertiajs/inertia-react" => "^0.8.1",
                 "@inertiajs/react" => "^1.0.14",
-                "@mantine/core" => "^7.4.1",
-                "@mantine/form" => "^7.4.1",
-                "@mantine/hooks" => "^7.4.1",
+                "@mantine/core" => "^7.4.2",
+                "@mantine/form" => "^7.4.2",
+                "@mantine/hooks" => "^7.4.2",
                 "@tabler/icons-react" => "^2.46.0",
                 "react" => "^18.2.0",
                 "react-dom" => "^18.2.0"

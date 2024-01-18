@@ -5,9 +5,6 @@ export const ModeSwtich = () => {
 
     return (
         <Group>
-            {/* <Button onClick={() => setColorScheme('light')}>Light</Button>
-            <Button onClick={() => setColorScheme('dark')}>Dark</Button>
-            <Button onClick={() => setColorScheme('auto')}>Auto</Button> */}
             <SegmentedControl color="blue"
             defaultValue={colorScheme}
             data={[

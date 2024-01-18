@@ -1,5 +1,5 @@
 import { AuthLayout } from "@/Layouts/AuthLayout"
-import { TextInput, Center, Title, Paper, PasswordInput, Stack, Checkbox, Button, Text, Group } from "@mantine/core";
+import { TextInput, Center, Title, Paper, PasswordInput, Stack, Anchor, Button, Text, Group } from "@mantine/core";
 
 import { Head, Link, useForm } from '@inertiajs/react';
 
@@ -16,7 +16,7 @@ export default function Register() {
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('panel.register'));
+        post(route('panel.register.store'));
     };
 
     return (
@@ -30,20 +30,22 @@ export default function Register() {
                     <form onSubmit={submit}>
                         <Stack>
                             <TextInput label="Name" placeholder="John Doe" required onChange={(e) => setData('name', e.target.value)} />
-                            <TextInput label="Email" placeholder="email@example.com" required onChange={(e) => setData('email', e.target.value)}/>
-                            <PasswordInput label="Password" placeholder="*******" required onChange={(e) => setData('password', e.target.value)}/>
-                            <PasswordInput label="Confirm Password" placeholder="*******" required onChange={(e) => setData('password_confirmation', e.target.value)}/>
+                            <TextInput label="Email" placeholder="email@example.com" required onChange={(e) => setData('email', e.target.value)} />
+                            <PasswordInput label="Password" placeholder="*******" required onChange={(e) => setData('password', e.target.value)} />
+                            <PasswordInput label="Confirm Password" placeholder="*******" required onChange={(e) => setData('password_confirmation', e.target.value)} />
 
-                            <Button variant="light" radius="md" type="submit" fullWidth leftSection={<IconLogin2 />}>Register</Button>
+                            <Button variant="light" radius="md" type="submit" fullWidth leftSection={<IconLogin2 />} loading={processing}>Register</Button>
                             <Group justify="space-between">
-                                <Link href="">
-                                    <Text>Forgot your password?</Text>
-                                </Link>
-
-                                <Link href={route('panel.login')}>
-                                    <Text>Already have account?</Text>
-                                </Link>
-
+                                <Text c="indigo" fw="normal">
+                                    <Link href={route('panel.login')} style={{ textDecoration: "none", color: "inherit" }}>
+                                        Forgot your password?
+                                    </Link>
+                                </Text>
+                                <Text c="indigo" fw="normal">
+                                    <Link href={route('panel.login')} style={{ textDecoration: "none", color: "inherit" }}>
+                                        Already have account?
+                                    </Link>
+                                </Text>
                             </Group>
                         </Stack>
                     </form>

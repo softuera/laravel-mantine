@@ -5,7 +5,7 @@
         <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" alt="Laravel" width="40%">
     </a>
     <a href="https://mantine.dev/">
-        <img src="/art/mantine-logo.svg " alt="Mantine" width="30%">
+        <img src="/art/mantine-logo.png " alt="Mantine" width="30%">
     </a>
 </p>
 

@@ -2,6 +2,7 @@ import { AppShell, Burger, Group, Skeleton, Avatar } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MainLayout } from './MainLayout';
 import { Header } from '../Components/Header';
+import { Navbar } from '../Components/Navbar';
 
 export const PanelLayout = ({ children }) => {
     const [opened, { toggle }] = useDisclosure();
@@ -14,13 +15,7 @@ export const PanelLayout = ({ children }) => {
                 padding="md"
             >
                 <Header opened={opened} toggle={toggle}/>
-                <AppShell.Navbar p="md">
-                    {Array(15)
-                        .fill(0)
-                        .map((_, index) => (
-                            <Skeleton key={index} h={28} mt="sm" animate={false} />
-                        ))}
-                </AppShell.Navbar>
+                <Navbar />
                 <AppShell.Main>
                     {children}
                 </AppShell.Main>

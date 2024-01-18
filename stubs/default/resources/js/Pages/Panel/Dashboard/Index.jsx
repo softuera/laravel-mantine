@@ -1,12 +1,13 @@
 import { PanelLayout } from "@/Layouts/PanelLayout"
 
 import { Head } from '@inertiajs/react';
+import { Title } from '@mantine/core';
 
-export default function Index(){
-    return(
+export default function Index() {
+    return (
         <PanelLayout>
             <Head title="Dashboard" />
-            <h1>OPaaaa</h1>
+            <Title>Dashboard</Title>
         </PanelLayout>
     )
 }

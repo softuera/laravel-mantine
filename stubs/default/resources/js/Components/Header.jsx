@@ -39,7 +39,7 @@ export const Header = ({ opened, toggle }) => {
                                 <Menu.Dropdown w="240">
                                     <Menu.Label>Application</Menu.Label>
                                     <Menu.Item leftSection={<IconUser size="1rem" />}
-                                        onClick={() => router.visit(route('panel.profile'))}
+                                        onClick={() => router.visit(route('panel.profile.index'))}
                                     >
                                         Profile
                                     </Menu.Item>
