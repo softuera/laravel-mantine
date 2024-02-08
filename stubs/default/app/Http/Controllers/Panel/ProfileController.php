@@ -8,6 +8,13 @@ use Inertia\Inertia;
 
 class ProfileController extends Controller
 {
+    public static function menu(){
+        return [
+            'name' => 'Profile',
+            'route' => 'panel.profile.index'
+        ];
+    }
+
     public function index(){
         return Inertia::render('Panel/Profile/Index');
     }

@@ -39,8 +39,8 @@ class InstallCommand extends Command implements PromptsForMissingInput
         $this->updateNodePackages(function ($packages) {
             return [
                 "@vitejs/plugin-react" => "^4.2.1",
-                "postcss" => "^8.4.33",
-                "postcss-preset-mantine" => "^1.12.3",
+                "postcss" => "^8.4.35",
+                "postcss-preset-mantine" => "^1.13.0",
                 "postcss-simple-vars" => "^7.0.1"
             ] + $packages;
         }, true);
@@ -50,10 +50,10 @@ class InstallCommand extends Command implements PromptsForMissingInput
             return [
                 "@inertiajs/inertia-react" => "^0.8.1",
                 "@inertiajs/react" => "^1.0.14",
-                "@mantine/core" => "^7.4.2",
-                "@mantine/form" => "^7.4.2",
-                "@mantine/hooks" => "^7.4.2",
-                "@tabler/icons-react" => "^2.46.0",
+                "@mantine/core" => "^7.5.1",
+                "@mantine/form" => "^7.5.1",
+                "@mantine/hooks" => "^7.5.1",
+                "@tabler/icons-react" => "^2.47.0",
                 "react" => "^18.2.0",
                 "react-dom" => "^18.2.0"
             ] + $packages;

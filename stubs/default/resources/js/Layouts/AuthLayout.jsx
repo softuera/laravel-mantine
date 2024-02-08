@@ -1,37 +1,30 @@
-import { AppShell, BackgroundImage, Box, Burger, Center, Grid, Group, Skeleton, Text, Button, useMantineColorScheme, Stack } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { MainLayout } from './MainLayout';
+import { router } from '@inertiajs/react';
+import { AppShell, Box, Button, Center, Container, Group, Paper } from '@mantine/core';
+import { IconHome2 } from '@tabler/icons-react';
 import { ModeSwtich } from '../Components/ModeSwitch';
+import { MainLayout } from './MainLayout';
 
-export const AuthLayout = ({ children }) => {
+
+export const AuthLayout = ({ title = "", children }) => {
 
     return (
-        <MainLayout>
-            <AppShell
-                padding={0}
-                bg="var(--mantine-color-gray-light)"
-            >
+        <MainLayout title={title}>
+            <AppShell padding={0}>
                 <AppShell.Main>
-                    <Grid>
-                        <Grid.Col span={{ base: 12, md: 6 }}>
-                            <Stack justify="space-between" h="100%" bg="indigo.9">
+                    <Container size="xs" h="100vh" px="xl">
+                        <Center h="100%">
+                            <Box  w="100%">
+                                <Group mb="xl" justify="space-between">
+                                    <Button variant="light" leftSection={<IconHome2 />} onClick={() => router.visit(route('home'))}>HomePage</Button>
+                                    <ModeSwtich />
+                                </Group>
+                                <Paper p="xl" shadow="xl" radius="lg" w="100%" withBorder>
+                                    {children}
+                                </Paper>
+                            </Box>
 
-                                <div />
-                                <Text fz={48} ff="text" fw="bold" ta="center" c="white">
-                                    Welcome to <br /><Text span c="red" inherit bg="white" px="md">Laravel</Text>-<Text span c="cyan" inherit bg="white" px="md">Mantine</Text>  <br />Back Panel!
-                                </Text>
-                                <Center mb="md">
-                                <ModeSwtich />
-
-                                </Center>
-                            </Stack>
-                        </Grid.Col>
-                        <Grid.Col span={{ base: 12, md: 6 }}>
-                            <Center h="100vh">
-                                {children}
-                            </Center>
-                        </Grid.Col>
-                    </Grid>
+                        </Center>
+                    </Container>
                 </AppShell.Main>
             </AppShell>
         </MainLayout>

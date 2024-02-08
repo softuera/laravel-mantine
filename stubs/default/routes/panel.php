@@ -6,7 +6,7 @@ use App\Http\Controllers\Panel\Auth\LoginController;
 use App\Http\Controllers\Panel\Auth\RegisterController;
 use App\Http\Controllers\Panel\DashboardController;
 use App\Http\Controllers\Panel\ProfileController;
-use App\Http\Middleware\Panel;
+use App\Http\Middleware\MantinePanel;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
         Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
     });
 
-    Route::middleware([Panel::class, 'auth'])->group(function () {
+    Route::middleware([MantinePanel::class, 'auth'])->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('index');
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
         Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');

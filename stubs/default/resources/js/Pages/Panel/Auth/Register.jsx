@@ -20,36 +20,33 @@ export default function Register() {
     };
 
     return (
-        <AuthLayout>
-            <Head title="Register" />
-            <Stack w="60%">
+        <AuthLayout title="Register">
+            <Stack>
                 <Center>
                     <Title order={2}>Register</Title>
                 </Center>
-                <Paper p="lg" shadow="md" radius="md">
-                    <form onSubmit={submit}>
-                        <Stack>
-                            <TextInput label="Name" placeholder="John Doe" required onChange={(e) => setData('name', e.target.value)} />
-                            <TextInput label="Email" placeholder="email@example.com" required onChange={(e) => setData('email', e.target.value)} />
-                            <PasswordInput label="Password" placeholder="*******" required onChange={(e) => setData('password', e.target.value)} />
-                            <PasswordInput label="Confirm Password" placeholder="*******" required onChange={(e) => setData('password_confirmation', e.target.value)} />
+                <form onSubmit={submit}>
+                    <Stack>
+                        <TextInput label="Name" placeholder="John Doe" required onChange={(e) => setData('name', e.target.value)} />
+                        <TextInput label="Email" placeholder="email@example.com" required onChange={(e) => setData('email', e.target.value)} />
+                        <PasswordInput label="Password" placeholder="*******" required onChange={(e) => setData('password', e.target.value)} />
+                        <PasswordInput label="Confirm Password" placeholder="*******" required onChange={(e) => setData('password_confirmation', e.target.value)} />
 
-                            <Button variant="light" radius="md" type="submit" fullWidth leftSection={<IconLogin2 />} loading={processing}>Register</Button>
-                            <Group justify="space-between">
-                                <Text c="indigo" fw="normal">
-                                    <Link href={route('panel.login')} style={{ textDecoration: "none", color: "inherit" }}>
-                                        Forgot your password?
-                                    </Link>
-                                </Text>
-                                <Text c="indigo" fw="normal">
-                                    <Link href={route('panel.login')} style={{ textDecoration: "none", color: "inherit" }}>
-                                        Already have account?
-                                    </Link>
-                                </Text>
-                            </Group>
-                        </Stack>
-                    </form>
-                </Paper>
+                        <Button variant="light" radius="md" type="submit" fullWidth leftSection={<IconLogin2 />} loading={processing}>Register</Button>
+                        <Group justify="space-between" gap="xl">
+                            <Text c="indigo" fw="normal">
+                                <Link href={route('panel.login')} style={{ textDecoration: "none", color: "inherit" }}>
+                                    Forgot your password?
+                                </Link>
+                            </Text>
+                            <Text c="indigo" fw="normal">
+                                <Link href={route('panel.login')} style={{ textDecoration: "none", color: "inherit" }}>
+                                    Already have account?
+                                </Link>
+                            </Text>
+                        </Group>
+                    </Stack>
+                </form>
             </Stack>
         </AuthLayout>
     )

@@ -1,4 +1,4 @@
-import { AppShell, BackgroundImage, Box, Burger, Center, Grid, Group, Skeleton, Text, Button, useMantineColorScheme, SegmentedControl } from '@mantine/core';
+import { Group, SegmentedControl, useMantineColorScheme } from '@mantine/core';
 
 export const ModeSwtich = () => {
     const { colorScheme, setColorScheme } = useMantineColorScheme();
