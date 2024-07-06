@@ -20,7 +20,7 @@ composer require softuera/laravel-mantine
 After laravel-mantine is installed, you should also compile your application's frontend assets:
 
 ```bash
-php artisan breeze:install
+php artisan laravel-mantine:install
  
 php artisan migrate
 npm install
